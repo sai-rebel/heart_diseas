@@ -8,6 +8,8 @@ SECRET_KEY = 'django-insecure-8%rcs%p1hvs(hz4g70pj2ke6m1@04xy1_(#f0s(#*^5fq(=k4#
 DEBUG = False
 DEBUG = False
 
+DEBUG = False
+
 ALLOWED_HOSTS = [
     'web-production-830f1.up.railway.app'
 ]
@@ -15,6 +17,12 @@ ALLOWED_HOSTS = [
 CSRF_TRUSTED_ORIGINS = [
     'https://web-production-830f1.up.railway.app'
 ]
+
+# ADD THIS ALSO 🔥
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+
 # APPLICATIONS
 INSTALLED_APPS = [
     'django.contrib.admin',
