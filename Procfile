@@ -1,1 +1,1 @@
-web: gunicorn Cardiovascular_health_prediction.Cardiovascular_health_prediction.wsgi:application
+web: cd Cardiovascular_health_prediction && gunicorn Cardiovascular_health_prediction.wsgi:application
