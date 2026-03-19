@@ -1,0 +1,150 @@
+nput Fields Explanation (13 Features)
+1. Age
+
+English: Age of the patient in years.
+Telugu: Patient vayasu (samvatsaralu lo).
+
+Example: 45, 52, 60
+
+2. Sex
+
+English: Gender of the patient.
+Telugu: Patient gender.
+
+Values:
+
+0 → Female
+
+1 → Male
+
+3. Chest Pain Type (cp)
+
+English: Type of chest pain experienced by the patient.
+Telugu: Patient ki unna chest pain type.
+
+Values:
+
+0 → Typical Angina
+
+1 → Atypical Angina
+
+2 → Non-anginal Pain
+
+3 → Asymptomatic
+
+4. Resting Blood Pressure (trestbps)
+
+English: Blood pressure of the patient at rest (mm Hg).
+Telugu: Patient rest lo unna BP value.
+
+Example: 120, 130, 140
+
+5. Cholesterol (chol)
+
+English: Cholesterol level in blood (mg/dl).
+Telugu: Blood lo cholesterol amount.
+
+Example: 200, 240, 300
+
+6. Fasting Blood Sugar (fbs)
+
+English: Blood sugar level after fasting.
+
+Values:
+
+0 → Less than 120 mg/dl
+
+1 → Greater than 120 mg/dl
+
+Telugu: Fasting taruvatha blood sugar level.
+
+7. Resting ECG Results (restecg)
+
+English: Electrocardiographic results showing heart electrical activity.
+Telugu: ECG test results.
+
+Values:
+
+0 → Normal
+
+1 → ST-T wave abnormality
+
+2 → Left ventricular hypertrophy
+
+8. Maximum Heart Rate Achieved (thalach)
+
+English: Highest heart rate recorded during exercise.
+Telugu: Exercise time lo maximum heart beat rate.
+
+Example: 150, 170, 180
+
+9. Exercise Induced Angina (exang)
+
+English: Chest pain caused by exercise.
+
+Values:
+
+0 → No
+
+1 → Yes
+
+Telugu: Exercise chesina appudu chest pain vachinda leda.
+
+10. Oldpeak
+
+English: ST depression caused by exercise compared to rest.
+Telugu: Exercise valla heart activity lo change.
+
+Example: 1.0, 2.3, 3.5
+
+11. Slope
+
+English: Slope of peak exercise ST segment.
+Telugu: Exercise peak time lo ECG slope.
+
+Values:
+
+0 → Upsloping
+
+1 → Flat
+
+2 → Downsloping
+
+12. CA
+
+English: Number of major blood vessels colored by fluoroscopy.
+
+Values:
+
+0 – 3
+
+Telugu: Heart blood vessels count.
+
+13. Thal
+
+English: Thalassemia blood disorder test result.
+
+Values:
+
+0 → Normal
+
+1 → Fixed defect
+
+2 → Reversible defect
+
+3 → Other condition
+
+Telugu: Blood disorder test result.
+
+Output Field
+Target
+
+English: Indicates whether the person has heart disease or not.
+
+Values:
+
+0 → No Heart Disease
+
+1 → Heart Disease
+
+Telugu: Patient ki heart disease unda leda ani chupisthundi.
