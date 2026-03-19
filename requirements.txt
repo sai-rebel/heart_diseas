@@ -1,0 +1,8 @@
+django
+gunicorn
+whitenoise
+dj-database-url
+matplotlib
+pandas
+numpy
+scikit-learn
