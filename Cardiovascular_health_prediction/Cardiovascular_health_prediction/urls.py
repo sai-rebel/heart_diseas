@@ -42,7 +42,7 @@ urlpatterns = [
     #userurls
    
     path('UserRegisterForm',usr.UserRegisterActions,name='UserRegisterForm'),
-    path("UserLoginCheck/", usr.UserLoginCheck, name="UserLoginCheck"),
+    path("UserLoginCheck", usr.UserLoginCheck, name="UserLoginCheck"),
     path("UserHome/", usr.UserHome, name="UserHome"),
     path("index/", usr.index, name="index"),
     path('DatasetView/', usr.DatasetView, name='DatasetView'),
