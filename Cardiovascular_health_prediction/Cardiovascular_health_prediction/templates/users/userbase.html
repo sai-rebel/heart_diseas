@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiovascular health prediction</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: url("{% static 'bg1.jpg' %}") no-repeat center center fixed;
+        background-size: cover;
+        min-height: 100vh;
+    }
+
+    nav {
+        width: 100%;
+        background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        transform: perspective(1000px) translateZ(0);
+        animation: navFadeIn 0.8s ease-out forwards;
+        transform-style: preserve-3d;
+        opacity: 0;
+    }
+
+    nav h1 {
+        color: #00e6e6;
+        font-size: 1.9rem;
+        letter-spacing: 1px;
+        animation: fadeIn 1.2s ease-in-out;
+        text-shadow: 0 0 10px rgba(0, 230, 255, 0.5);
+        transition: transform 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    nav h1:hover {
+        transform: scale(1.05) rotateX(5deg);
+        text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin-left: 25px;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.1rem;
+        padding: 8px 15px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        position: relative;
+        perspective: 800px;
+    }
+
+    nav ul li a::after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #00ffff;
+        box-shadow: 0 0 5px #00ffff;
+        transition: width 0.4s ease;
+    }
+
+    nav ul li a:hover::after {
+        width: 100%;
+    }
+
+    nav ul li a:hover {
+        background-color: rgba(0, 255, 255, 0.1);
+        color: #00f7ff;
+        transform: translateZ(5px) scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 255, 255, 0.2);
+        text-shadow: 0 0 8px #00ffff;
+    }
+
+    .main-content {
+        margin-top: 90px;
+        padding: 40px;
+        color: #fff;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes navFadeIn {
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        nav {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        nav ul {
+            flex-direction: column;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            margin-left: 0;
+            width: 100%;
+        }
+
+        nav ul li a {
+            width: 100%;
+            display: block;
+            padding: 12px 20px;
+        }
+
+        .main-content {
+            margin-top: 200px;
+        }
+    }
+</style>
+
+</head>
+<body>
+
+<nav>
+    <h1>Cardiovascular health prediction</h1>
+    <ul>
+        <li><a href="{% url 'UserHome' %}">🏠 Home</a></li>
+        <li><a href="{% url 'DatasetView' %}">📄 Dataset</a></li>
+        <li><a href="{% url 'training' %}">🧠 Train Model</a></li>
+        <li><a href="{% url 'prediction' %}">🔬 Predict</a></li>
+        <li><a href="{% url 'index' %}">🚪 Logout</a></li>
+    </ul>
+</nav>
+
+<div class="main-content">
+    {% block contents %}
+    {% endblock %}
+</div>
+
+</body>
+</html>
