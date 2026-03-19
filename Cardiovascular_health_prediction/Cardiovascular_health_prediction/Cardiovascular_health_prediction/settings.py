@@ -6,8 +6,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY
 SECRET_KEY = 'django-insecure-8%rcs%p1hvs(hz4g70pj2ke6m1@04xy1_(#f0s(#*^5fq(=k4#'
 DEBUG = False
-ALLOWED_HOSTS = ['*']
+DEBUG = False
 
+ALLOWED_HOSTS = [
+    'web-production-830f1.up.railway.app'
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-830f1.up.railway.app'
+]
 # APPLICATIONS
 INSTALLED_APPS = [
     'django.contrib.admin',
