@@ -24,6 +24,10 @@ urlpatterns = [
     path('DeleteUsers/', admins.DeleteUsers, name='DeleteUsers'),
     path('adminhome/', admins.adminhome, name='adminhome'),
 
+
+    path('AdminLogincheck', admins.AdminLoginCheck, name='AdminLoginCheck'),
+    path('AdminLogincheck/', admins.AdminLoginCheck),
+
     # ✅ User
     path('UserRegisterForm/', usr.UserRegisterActions, name='UserRegisterForm'),
     path('UserLoginCheck/', usr.UserLoginCheck, name='UserLoginCheck'),
