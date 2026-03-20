@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +29,7 @@
             padding: 30px 0;
             text-align: center;
             border-bottom: 5px solid #003d73;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         header h1 {
@@ -84,9 +85,28 @@
             max-width: 1000px;
             margin: 40px auto;
             padding: 30px;
-            {% comment %} background-color: rgba(255, 255, 255, 0.92); {% endcomment %}
+
+                {
+                % comment %
+            }
+
+            background-color: rgba(255, 255, 255, 0.92);
+
+                {
+                % endcomment %
+            }
+
             border-radius: 12px;
-            {% comment %} box-shadow: 0 8px 20px rgba(0,0,0,0.15); {% endcomment %}
+
+                {
+                % comment %
+            }
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+                {
+                % endcomment %
+            }
         }
 
         footer {
@@ -100,31 +120,33 @@
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Cardiovascular Admin Panel
-       
-    </h1>
-</header>
+    <header>
+        <h1>Cardiovascular Admin Panel
 
-<nav>
-    <ul>
-        <li><a href="{% url 'adminhome' %}">🏠 Dashboard</a></li>
-        <li><a href="{% url 'RegisterUsersView' %}">👥 User Records</a></li>
-        <li><a href="{% url 'index' %}">🚪 Logout</a></li>
-    </ul>
-</nav>
+        </h1>
+    </header>
 
-<main>
-    {% block contents %}
-    {% endblock %}
-</main>
+    <nav>
+        <ul>
+            <li><a href="{% url 'adminhome' %}">🏠 Dashboard</a></li>
+            <li><a href="{% url 'userDetails' %}">👥 User Records</a></li>
+            <li><a href="{% url 'index' %}">🚪 Logout</a></li>
+        </ul>
+    </nav>
 
-<footer>
-    &copy; 2025 Prediction of Cardiovascular Health Status 
-Using Machine Learning Algorithms |
-</footer>
+    <main>
+        {% block contents %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        &copy; 2025 Prediction of Cardiovascular Health Status
+        Using Machine Learning Algorithms |
+    </footer>
 
 </body>
+
 </html>
