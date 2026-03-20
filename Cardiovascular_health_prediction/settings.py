@@ -133,3 +133,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://web-production-830f1.up.railway.app"
+]
