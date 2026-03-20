@@ -1,0 +1,1 @@
+web: gunicorn Cardiovascular_health_prediction.wsgi
