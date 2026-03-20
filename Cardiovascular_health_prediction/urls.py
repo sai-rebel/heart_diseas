@@ -10,54 +10,30 @@ from django.views.static import serve
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # ✅ Main pages (handle both with and without slash)
-    path("", mainView.index, name="index"),
-    path("index/", mainView.index),
-    path("index", mainView.index),
+    # ✅ Main pages
+    path('', mainView.index, name='index'),
+    path('index/', mainView.index, name='index'),
 
-    path("Adminlogin/", mainView.AdminLogin),
-    path("Adminlogin", mainView.AdminLogin),
+    path('Adminlogin/', mainView.AdminLogin, name='AdminLogin'),
+    path('UserLogin/', mainView.UserLogin, name='UserLogin'),
 
-    path("UserLogin/", mainView.UserLogin),
-    path("UserLogin", mainView.UserLogin),
+    # ✅ Admin
+    path('AdminLogincheck/', admins.AdminLoginCheck, name='AdminLoginCheck'),
+    path('userDetails/', admins.RegisterUsersView, name='userDetails'),
+    path('ActivUsers/', admins.ActivaUsers, name='ActivUsers'),
+    path('DeleteUsers/', admins.DeleteUsers, name='DeleteUsers'),
+    path('adminhome/', admins.adminhome, name='adminhome'),
 
-    # ✅ Admin views
-    path("AdminLogincheck/", admins.AdminLoginCheck),
-    path("AdminLogincheck", admins.AdminLoginCheck),
-
-    path('userDetails/', admins.RegisterUsersView),
-    path('userDetails', admins.RegisterUsersView),
-
-    path('ActivUsers/', admins.ActivaUsers),
-    path('ActivUsers', admins.ActivaUsers),
-
-    path('DeleteUsers/', admins.DeleteUsers),
-    path('DeleteUsers', admins.DeleteUsers),
-
-    path('adminhome/', admins.adminhome),
-    path('adminhome', admins.adminhome),
-
-    # ✅ User views
-    path('UserRegisterForm/', usr.UserRegisterActions),
-    path('UserRegisterForm', usr.UserRegisterActions),
-
-    path("UserLoginCheck/", usr.UserLoginCheck),
-    path("UserLoginCheck", usr.UserLoginCheck),
-
-    path("UserHome/", usr.UserHome),
-    path("UserHome", usr.UserHome),
-
-    path('DatasetView/', usr.DatasetView),
-    path('DatasetView', usr.DatasetView),
-
-    path('training/', usr.training),
-    path('training', usr.training),
-
-    path('prediction/', usr.prediction),
-    path('prediction', usr.prediction),
+    # ✅ User
+    path('UserRegisterForm/', usr.UserRegisterActions, name='UserRegisterForm'),
+    path('UserLoginCheck/', usr.UserLoginCheck, name='UserLoginCheck'),
+    path('UserHome/', usr.UserHome, name='UserHome'),
+    path('DatasetView/', usr.DatasetView, name='DatasetView'),
+    path('training/', usr.training, name='training'),
+    path('prediction/', usr.prediction, name='prediction'),
 ]
 
-# ✅ Serve media files (FIX GRAPH ISSUE)
+# ✅ MEDIA (for graphs)
 urlpatterns += [
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]
