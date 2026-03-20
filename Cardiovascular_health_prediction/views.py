@@ -9,6 +9,7 @@ def index(request):
     return render(request, 'index.html')
 
 def AdminLogin(request):
+    print("ADMIN LOGIN PAGE LOADED")
     return render(request, 'AdminLogin.html')
 
 def UserLogin(request):
