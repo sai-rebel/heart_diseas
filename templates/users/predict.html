@@ -1,0 +1,99 @@
+{% extends 'users/userbase.html' %}
+{% load static %}
+{% block contents %}
+
+<h2 style="text-align:center; color:#2e86de; margin-bottom:30px;">Cardiovascular Health Prediction</h2>
+
+<form method="post" style="width:900px; margin:auto; display:flex; flex-wrap:wrap; gap:20px; background:white; padding:25px; border:1px solid #ccc; box-shadow:0px 2px 5px rgba(0,0,0,0.1);">
+{% csrf_token %}
+
+<!-- Left Column (7 features) -->
+<div style="width:48%; display:flex; flex-direction:column; gap:15px;">
+    <label style="font-weight:bold; color:#000;">Age</label>
+    <input type="number" name="age" required>
+
+    <label style="font-weight:bold; color:#000;">Sex</label>
+    <select name="sex">
+        <option value="0">Female</option>
+        <option value="1">Male</option>
+    </select>
+
+    <label style="font-weight:bold; color:#000;">Chest Pain Type (cp)</label>
+    <select name="cp">{% for val, name in cp_choices %}<option value="{{ val }}">{{ name }}</option>{% endfor %}</select>
+
+    <label style="font-weight:bold; color:#000;">Resting BP (trestbps)</label>
+    <input type="number" name="trestbps" required>
+
+    <label style="font-weight:bold; color:#000;">Cholesterol</label>
+    <input type="number" name="chol" required>
+
+    <label style="font-weight:bold; color:#000;">Fasting Blood Sugar (fbs)</label>
+    <select name="fbs">
+        <option value="0">Less than 120</option>
+        <option value="1">Greater than 120</option>
+    </select>
+
+    <label style="font-weight:bold; color:#000;">Rest ECG</label>
+    <select name="restecg">{% for val, name in restecg_choices %}<option value="{{ val }}">{{ name }}</option>{% endfor %}</select>
+</div>
+
+<!-- Right Column (6 features) -->
+<div style="width:48%; display:flex; flex-direction:column; gap:15px;">
+    <label style="font-weight:bold; color:#000;">Max Heart Rate (thalach)</label>
+    <input type="number" name="thalach" required>
+
+    <label style="font-weight:bold; color:#000;">Exercise Induced Angina (exang)</label>
+    <select name="exang">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+    </select>
+
+    <label style="font-weight:bold; color:#000;">Oldpeak</label>
+    <input type="number" step="0.1" name="oldpeak" required>
+
+    <label style="font-weight:bold; color:#000;">Slope</label>
+    <select name="slope">{% for val, name in slope_choices %}<option value="{{ val }}">{{ name }}</option>{% endfor %}</select>
+
+    <label style="font-weight:bold; color:#000;">Major Vessels (ca)</label>
+    <input type="number" name="ca" required>
+
+    <label style="font-weight:bold; color:#000;">Thal</label>
+    <select name="thal">{% for val, name in thal_choices %}<option value="{{ val }}">{{ name }}</option>{% endfor %}</select>
+</div>
+
+<!-- Predict Button -->
+<div style="width:100%; text-align:center; margin-top:25px;">
+    <input type="submit" value="Predict" style="padding:14px 30px; font-size:18px; background:#2e86de; color:white; border:none; cursor:pointer; border-radius:5px;">
+</div>
+
+<!-- Prediction Result -->
+{% if prediction %}
+<div style="margin-top:25px; padding:15px; border:1px solid #ddd; background:#f9e79f; color:#c0392b; font-weight:bold; text-align:center; border-radius:4px;">
+    Prediction: {{ prediction }}
+</div>
+{% endif %}
+
+</form>
+
+<!-- Uniform input & select height -->
+<style>
+input, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    height: 42px;
+    box-sizing: border-box;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+</style>
+
+{% endblock %}

@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiovascular prediction admin panel</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-image: url("{% static 'bg1.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background: url("https://helenataylorclinic.com/wp-content/uploads/2024/10/AdobeStock_620126328-1024x683-1.jpeg.webp");
+        }
+
+        header {
+            background-color: rgba(0, 78, 146, 0.88);
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 5px solid #003d73;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        header h1 span {
+            font-size: 1rem;
+            display: block;
+            font-weight: 400;
+            margin-top: 10px;
+            color: #dbeafe;
+        }
+
+        nav {
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid #ccc;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 14px 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 18px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #003d73;
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #003d73;
+            color: #fff;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            {% comment %} background-color: rgba(255, 255, 255, 0.92); {% endcomment %}
+            border-radius: 12px;
+            {% comment %} box-shadow: 0 8px 20px rgba(0,0,0,0.15); {% endcomment %}
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9rem;
+            background-color: rgba(255, 255, 255, 0.75);
+            color: #555;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Cardiovascular Admin Panel
+       
+    </h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="{% url 'adminhome' %}">🏠 Dashboard</a></li>
+        <li><a href="{% url 'RegisterUsersView' %}">👥 User Records</a></li>
+        <li><a href="{% url 'index' %}">🚪 Logout</a></li>
+    </ul>
+</nav>
+
+<main>
+    {% block contents %}
+    {% endblock %}
+</main>
+
+<footer>
+    &copy; 2025 Prediction of Cardiovascular Health Status 
+Using Machine Learning Algorithms |
+</footer>
+
+</body>
+</html>
