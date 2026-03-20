@@ -67,7 +67,7 @@
 <section class="content">
     <div class="admin-container">
         <h2 class="admin-login-heading">🛡️ Admin Login</h2>
-        <form action="{% url 'AdminLoginCheck' %}" method="POST">
+        <form action="/AdminLogincheck/" method="POST">
             {% csrf_token %}
             <div class="form-group mb-3">
                 <input type="text" name="loginid" class="form-control" required placeholder="👤 Enter Admin ID">
